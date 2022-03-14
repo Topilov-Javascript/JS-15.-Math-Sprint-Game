@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Math Sprint Game</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            Math Sprint Game
+        </div>
+
+        <div class="body">
+
+            <div class="start-face">
+                <div class="inputs">
+                    <div class="inputs-inner">
+                        <div class="my-input" onclick="getValue(10)" value="10">
+                            <div class="left-side"> 10 Questions </div>
+                            <div class="right-side">
+                                <div class="top"> Best Score </div>
+                                <div class="bottom bestScore"> 0.0s </div>
+                            </div>
+                        </div>
+                        <div class="my-input" onclick="getValue(25)" value="25">
+                            <div class="left-side"> 25 Questions </div>
+                            <div class="right-side">
+                                <div class="top"> Best Score </div>
+                                <div class="bottom bestScore"> 0.0s </div>
+                            </div>
+                        </div>
+                        <div class="my-input" onclick="getValue(50)" value="50">
+                            <div class="left-side"> 50 Questions </div>
+                            <div class="right-side">
+                                <div class="top"> Best Score </div>
+                                <div class="bottom bestScore"> 0.0s </div>
+                            </div>
+                        </div>
+                        <div class="my-input" onclick="getValue(100)" value="100">
+                            <div class="left-side"> 100 Questions </div>
+                            <div class="right-side">
+                                <div class="top"> Best Score </div>
+                                <div class="bottom bestScore"> 0.0s </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button onclick="startRound()" role="button">Start Round</button>
+                </div>
+            </div>
+
+            <div class="waiting-face" hidden>
+                <div id="waiting-counter">
+                    
+                </div>
+            </div>
+
+            <div class="playing-face" hidden>
+                <div class="content" id="playing-content">
+                    asdasdadssd
+                </div>
+                <div class="buttons">
+                    <button class="wrong" onclick="playing('wrong')">Wrong</button>
+                    <button class="right" onclick="playing('right')">Right</button>
+                </div>
+            </div>
+
+            <div class="end-face" hidden>
+                <div class="content">
+                    <div>
+                        <div>
+                            <h4>Your Time</h3>
+                        </div>
+                        <div>
+                            <h1 style="color: green;" id="score">  </h1>
+                        </div>
+                        <div class="bottom first">Base Time: <span id="base-time">   </span></div>
+                        <div class="bottom" style="color: red;">Penalty: <span id="penalty">  </span></div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button onclick="playAgain()">Play Again</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

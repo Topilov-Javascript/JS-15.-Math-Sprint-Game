@@ -1,0 +1,308 @@
+
+$likeGray: #36395A;
+
+@mixin all-button {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: $likeGray;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+
+    &:focus {
+        box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    }
+
+    &:hover {
+        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: #D6D6E7 0 3px 7px inset;
+        transform: translateY(2px);
+    }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCI+CjxmaWx0ZXIgaWQ9Im4iPgo8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjEwIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIj48L2ZlVHVyYnVsZW5jZT4KPC9maWx0ZXI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMDAwIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWx0ZXI9InVybCgjbikiIG9wYWNpdHk9IjAuNCI+PC9yZWN0Pgo8L3N2Zz4=");
+    background-attachment: fixed;
+    font-size: 2rem;
+    color: #fff;
+    font-family: PT Mono, sans-serif;
+}
+
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: $likeGray;
+}
+
+.container {
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+    border-radius: 8px;
+    width: 500px;
+    height: 95vh;
+    margin: 2.5vh auto;
+}
+
+.header {
+    height: 15%;
+    background-color: transparent;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.body {
+    height: 85%;
+    background-color: #fff;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+}
+
+// Start Face ---------------------------------------
+.start-face {
+    height: 100%;
+
+    .inputs {
+        height: 85%;
+        overflow-y: auto;
+        padding: 0.6rem 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        .inputs-inner {
+            overflow-y: auto;
+            padding: 5px 0;
+
+            .my-input {
+                height: 70px;
+                width: 90%;
+                border-radius: 5px;
+                background-color: transparent;
+                border: 1px solid $likeGray;
+                margin: 0.7rem auto;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: $likeGray;
+                padding: 2px 10px;
+                text-align: center;
+                transition: 0.1s linear;
+
+                &.selected {
+                    background-color: $likeGray;
+                    color: #fff;
+                }
+
+                .left-side {
+                    font-size: 1.5rem;
+                }
+
+                .right-side {
+                    .top {
+                        font-size: 1.2rem;
+                    }
+
+                    .bottom {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+
+            .my-input:first-of-type {
+                margin: 0 auto;
+            }
+
+            .my-input:last-of-type {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .buttons {
+        height: 15%;
+        background-color: $likeGray;
+        border-radius: 0 0 7px 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            @include all-button
+        }
+    }
+}
+
+// Waiting Face ---------------------------------------
+.waiting-face {
+    box-sizing: border-box;
+    height: 100% !important;
+    padding: 20px;
+    color: $likeGray;
+
+    #waiting-counter {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4rem;
+    }
+}
+
+// Playing Face ---------------------------------------
+.playing-face {
+    box-sizing: border-box;
+    height: 100% !important;
+    color: $likeGray;
+
+    .content {
+        height: 85%;
+        overflow-y: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .buttons {
+        height: 15%;
+        background-color: $likeGray;
+        border-radius: 0 0 7px 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            @include all-button;
+            padding: 1px 25px;
+
+            &.wrong {
+                margin-right: 15px;
+                color: red;
+                text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+                    0px -4px 10px rgba(255, 255, 255, 0.3);
+            }
+
+            &.right {
+                color: green;
+                text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+                    0px -4px 10px rgba(255, 255, 255, 0.3);
+            }
+        }
+    }
+}
+
+// End Face ---------------------------------------
+.end-face {
+    box-sizing: border-box;
+    height: 100% !important;
+    color: $likeGray;
+
+    .content {
+        height: 85%;
+        overflow-y: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        h1,
+        h4 {
+            margin: 10px 0;
+        }
+
+        .bottom {
+            font-weight: 600;
+
+            &.first {
+                margin-top: 30px !important;
+            }
+        }
+    }
+
+    .buttons {
+        height: 15%;
+        background-color: $likeGray;
+        border-radius: 0 0 7px 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            @include all-button;
+            padding: 1px 25px;
+        }
+    }
+}
+
+/* Media Queries: for lower than 577px */
+
+@media screen and (max-width: 400px) {
+    .container .header {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        width: 95%;
+    }
+
+    .start-face {
+        .inputs {
+            .inputs-inner {
+                .my-input {
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
